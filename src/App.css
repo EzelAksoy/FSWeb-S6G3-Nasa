@@ -2,6 +2,17 @@
   text-align: center;
 }
 
+.Veri {
+  border: 0.25rem solid red;
+  max-width: 800px;
+  margin: 5rem auto;
+  padding: 2rem;
+}
+.Tarih {
+  display: flex;
+  justify-content: space-around;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
