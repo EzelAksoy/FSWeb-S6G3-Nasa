@@ -5,6 +5,19 @@ import { useState } from "react";
 import { useEffect } from "react";
 import Veriler from "./Veriler";
 import Tarih from "./Tarih";
+import styled from "styled-components";
+
+const Sc_p = styled.p`
+  display: flex;
+  background-color: gray;
+  justify-content: space-between;
+  vertical-align: center;
+  font-weight: bold;
+  font-size: 3rem;
+  font-style: italic;
+  border: 0.25rem solid gray;
+  border-radius: 10px;
+`;
 
 const başlangıç = {
   copyright: "Daniel Stern",
@@ -15,10 +28,10 @@ const başlangıç = {
   media_type: "image",
   service_version: "v1",
   title: "Reflections on the 1970s",
-  url: "https://apod.nasa.gov/apod/image/2202/NGC1975RunningMan_1024.jpg",
+  url: "https://apod.nasa.gov/apod/image/2302/enceladus12_cassini_960.jpg",
 };
 function App() {
-  const [veri, setVeri] = useState(null);
+  const [veri, setVeri] = useState(başlangıç);
   const [date, setDate] = useState("2023-02-02");
 
   useEffect(() => {
@@ -45,9 +58,10 @@ function App() {
 
   return (
     <div className="App">
-      <p style={{ fontWeigth: "bold", fontSize: "1.5rem" }}>
+      <Sc_p>
         Astronomy Picture of the Day
-      </p>
+        <img src="https://www.nasa.gov/sites/all/themes/custom/nasatwo/images/nasa-logo.svg " />
+      </Sc_p>
       <Tarih date={date} setDate={setDate} />
       <Veriler veri={veri} />
     </div>
